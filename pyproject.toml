@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "hw-web-10"
+version = "0.1.0"
+description = ""
+authors = ["Dmytro-Kruhlov <hazzy1451@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.6"
+psycopg2 = "^2.9.9"
+pillow = "^10.1.0"
+pymongo = "^4.5.0"
+mongoengine = "^0.27.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
