@@ -22,10 +22,11 @@
             <div class="col-md-4">
                 <p>
 
-                    <a href="/login" class="btn btn-primary">Login</a>
-                    <a href="/login" class="btn btn-primary">SignUp</a>
-                    <a href="/login" class="btn btn-primary">Logout</a>
-
+                    <a href="{% url 'users:login' %}" class="btn btn-primary">Login</a>
+                    <a href="{% url 'users:registration' %}" class="btn btn-primary">SignUp</a>
+                    <a href="{% url 'users:logout' %}" class="btn btn-primary">Logout</a>
+                    <a href="{% url 'quotes:add_author' %}" class="btn btn-primary">Add Author</a>
+                    <a href="{% url 'quotes:add_quote' %}" class="btn btn-primary">Add quote</a>
                 </p>
             </div>
         </div>
