@@ -52,7 +52,11 @@ def add_quote(request):
         form = QuoteForm()
     return render(request, "quotes/add_quote.html", {"form": form})
 
-def tag(request, tag_name):
+
+def tag(request, tag_name, page=1):
     quotes = Quote.objects.filter(tags__name=tag_name)
-    return render(request, "quotes/tag.html", {"quotes": quotes})
+    per_page = 10
+    paginator = Paginator(quotes, per_page)
+    quotes_on_page = paginator.page(page)
+    return render(request, "quotes/tag.html", {"quotes": quotes_on_page, "tag_name": tag_name})
 

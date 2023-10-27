@@ -1,4 +1,6 @@
-from django.forms import ModelForm, ImageField, FileInput, CharField, TextInput
+from django import forms
+
+from django.forms import ModelForm, ImageField, FileInput, CharField, TextInput, Textarea
 
 from .models import Author, Quote
 
