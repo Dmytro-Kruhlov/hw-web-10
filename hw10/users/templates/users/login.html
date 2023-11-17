@@ -2,13 +2,7 @@
 
 {% block content %}
 
-{% if messages %}
-<div>
-    {% for message in messages %}
-    <div {% if message.tags %} class="alert-{{ message.tags }}" {% endif %}>{{ message }}</div>
-    {% endfor %}
-</div>
-{% endif %}
+
 
 {% if form.errors %}
 <div class="alert alert-danger" role="alert">
@@ -35,6 +29,9 @@
     <div class="grid">
         <button type="submit" class="btn btn-success">Submit</button>
         <button type="reset" class="btn btn-secondary">Reset</button>
+    </div>
+    <div class="small text-center">
+        <a href="{% url 'users:password_reset' %}" class="text-center"><i>Forgot Password?</i></a>
     </div>
 </form>
 {% endblock %}

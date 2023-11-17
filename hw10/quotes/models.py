@@ -13,11 +13,13 @@ class Author(models.Model):
     def __str__(self):
         return self.fullname
 
+
 class Tag(models.Model):
     name = models.CharField(max_length=60, null=False, unique=True)
 
     def __str__(self):
         return self.name
+
 
 class Quote(models.Model):
     quote = models.TextField()

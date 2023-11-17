@@ -12,6 +12,12 @@ class RegisterForm(UserCreationForm):
         ),
     )
 
+    email = forms.CharField(
+        max_length=50,
+        required=True,
+        widget=forms.TextInput(attrs={"class": "form-control", "placeholder": "Username"}),
+    )
+
     password1 = forms.CharField(
         max_length=50,
         required=True,
@@ -30,7 +36,7 @@ class RegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ["username", "password1", "password2"]
+        fields = ["username", "email", "password1", "password2"]
 
 
 class LoginForm(AuthenticationForm):

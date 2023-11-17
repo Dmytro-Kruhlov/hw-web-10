@@ -11,7 +11,9 @@ def main(request, page=1):
     popular_tags = Tag.objects.annotate(quote_count=Count("quote")).order_by(
         "-quote_count"
     )[:10]
+    print(str(popular_tags.query))
     quotes = Quote.objects.all().order_by("-created_at")
+    print(str(quotes.query))
     per_page = 10
     paginator = Paginator(quotes, per_page)
     quotes_on_page = paginator.page(page)
@@ -55,6 +57,7 @@ def add_quote(request):
 
 def tag(request, tag_name, page=1):
     quotes = Quote.objects.filter(tags__name=tag_name)
+    print(str(quotes.query))
     per_page = 10
     paginator = Paginator(quotes, per_page)
     quotes_on_page = paginator.page(page)
